@@ -1,0 +1,252 @@
+/* Fondo del cuerpo */
+body {
+    background: linear-gradient(45deg, #b8c6ff, #f5a7b8, #a1c4fd, #c2f7cb);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header and Navigation Bar */
+header {
+    background-color: #0f0f0f;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 15px;
+}
+
+nav .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f5a7b8;
+}
+
+nav ul li a:active {
+    color: white;
+    text-decoration: none;  /* Quita la línea debajo cuando se presiona */
+}
+
+/* Contenedor principal */
+.pago-contenedor {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* Container para pago */
+.pago {
+    background: #f0f8ff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+/* Cuadro de resumen de precios */
+.resumen-precio {
+    background: #f0f8ff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-height: 250px; /* Limitar la altura máxima */
+    overflow-y: auto; /* Añadir desplazamiento vertical si es necesario */
+    position: sticky;
+    top: 20px;
+    margin-left: 20px;
+}
+
+.resumen-precio h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.resumen-precio p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.resumen-precio p span {
+    font-weight: bold;
+}
+
+/* Formulario de pago */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #3b3f58;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #f9f9f9;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    display: none; /* Ocultar los radio buttons */
+}
+
+input[type="radio"] + label {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #e3f2fd;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, border 0.3s;
+    margin-right: 10px; /* Ajustar margen para acercar los botones */
+}
+
+input[type="radio"]:checked + label {
+    background-color: #3b3f58;
+    color: white;
+    border: 1px solid #3b3f58;
+}
+
+label i {
+    margin-right: 5px;
+}
+
+.form-group div {
+    display: flex;
+    align-items: center;
+}
+
+#total {
+    font-weight: bold;
+    color: #333;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #3b3f58;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px auto 0;  /* Centramos el botón */
+    display: block;
+    width: auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #f5a7b8;
+}
+
+/* contratos */
+a {
+    color: #f17590;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff4b72;
+}
+
+a:active {
+    text-decoration: none;  /* Quita la línea debajo cuando se presiona */
+}
+
+
+@media (max-width: 600px) {
+    .pago-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pago {
+        margin-bottom: 20px;
+    }
+
+    .resumen-precio {
+        width: 100%;
+        margin: 0;
+    }
+
+    button[type="submit"] {
+        width: auto;
+        display: block;
+        margin: 20px auto 0;
+    }
+}

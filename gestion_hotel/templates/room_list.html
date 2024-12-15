@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Habitaciones{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Lista de Habitaciones</h1>
+        <a href="{% url 'room_create' %}" class="btn">Agregar Habitación <i class="fa-solid fa-bed"></i></a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Capacidad</th>
+                <th>Orientación</th>
+                <th>Disponibilidad</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+            {% for room in rooms %}
+            <tr>
+                <td>{{ room.ID_Habitacion }}</td>
+                <td>{{ room.Tipo_Habitacion }}</td>
+                <td>{{ room.Capacidad }}</td>
+                <td>{{ room.Orientacion }}</td>
+                <td>{{ room.Disponibilidad }}</td>
+                <td>{{ room.Precio }}</td>
+                <td>
+                    <a href="{% url 'room_update' room.pk %}">Editar <i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{% url 'room_delete' room.pk %}">Eliminar <i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

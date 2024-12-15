@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar Huésped{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Eliminar Huésped</h1>
+        <p>¿Estás seguro de que deseas eliminar al huésped {{ guest.Nombres }} {{ guest.Apellidos }} (ID: {{ guest.ID_Huesped }})?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Eliminar <i class="fa-solid fa-trash"></i></button>
+        </form>
+        <a href="{% url 'guest_list' %}">Cancelar</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Personal{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Lista de Personal</h1>
+        <a href="{% url 'staff_create' %}" class="btn">Agregar Personal <i class="fa-solid fa-user-plus"></i></a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>RUN</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Contacto</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+            {% for staff in staff %}
+            <tr>
+                <td>{{ staff.ID_Personal }}</td>
+                <td>{{ staff.RUN }}</td>
+                <td>{{ staff.Nombres }}</td>
+                <td>{{ staff.Apellidos }}</td>
+                <td>{{ staff.Contacto }}</td>
+                <td>{{ staff.Rol }}</td>
+                <td>
+                    <a href="{% url 'staff_update' staff.pk %}">Editar <i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{% url 'staff_delete' staff.pk %}">Eliminar <i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

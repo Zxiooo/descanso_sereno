@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar Personal{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Eliminar Personal</h1>
+        <p>¿Estás seguro de que deseas eliminar al personal {{ staff.ID_Personal }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Eliminar <i class="fa-solid fa-trash"></i></button>
+        </form>
+        <a href="{% url 'staff_list' %}">Cancelar</a>
+    </div>
+{% endblock %}

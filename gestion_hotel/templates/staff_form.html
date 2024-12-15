@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Registrar Personal{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Registrar Personal</h1>
+        <form id="staff-form" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                {{ form.RUN.label_tag }} {{ form.RUN }}
+                <span id="rut-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Nombres.label_tag }} {{ form.Nombres }}
+                <span id="nombres-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Apellidos.label_tag }} {{ form.Apellidos }}
+                <span id="apellidos-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Contacto.label_tag }} {{ form.Contacto }}
+                <span id="email-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Rol.label_tag }} {{ form.Rol }}
+                <span id="rol-error" class="text-danger"></span>
+            </div>
+            <button id="submit-button" type="submit">Guardar <i class="fa-solid fa-floppy-disk"></i></button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/personal_validador.js' %}"></script>
+{% endblock %}

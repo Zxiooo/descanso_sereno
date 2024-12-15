@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Huéspedes{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Lista de Huéspedes</h1>
+        <a href="{% url 'guest_create' %}" class="btn">Agregar Huésped <i class="fa-solid fa-user-plus"></i></a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>RUN</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Contacto</th>
+                <th>Cantidad de Personas</th>
+                <th>Habitación Asignada</th>
+                <th>Tipo de Habitación</th>
+                <th>Orientación</th>
+                <th>Acciones</th>
+            </tr>
+            {% for guest in guests %}
+            <tr>
+                <td>{{ guest.ID_Huesped }}</td>
+                <td>{{ guest.RUN }}</td>
+                <td>{{ guest.Nombres }}</td>
+                <td>{{ guest.Apellidos }}</td>
+                <td>{{ guest.Contacto }}</td>
+                <td>{{ guest.Cantidad_Personas }}</td>
+                <td>{{ guest.rooms.first.ID_Habitacion }}</td> <!-- Muestra la habitación asignada -->
+                <td>{{ guest.rooms.first.Tipo_Habitacion }}</td> <!-- Muestra el tipo de habitación -->
+                <td>{{ guest.rooms.first.Orientacion }}</td> <!-- Muestra la orientación de la habitación -->
+                <td>
+                    <a href="{% url 'guest_update' guest.pk %}">Editar <i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{% url 'guest_delete' guest.pk %}">Eliminar <i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

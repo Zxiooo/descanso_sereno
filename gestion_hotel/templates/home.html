@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Panel Administrativo</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo del Hotel">
+                <span>Descanso Sereno</span>
+            </div>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Volver al Inicio <i class="fa-solid fa-reply"></i></a></li>
+                <li><a href="{% url 'room_list' %}">Registro de Habitaciones</a></li>
+                <li><a href="{% url 'guest_list' %}">Registro de Huéspedes</a></li>
+                <li><a href="{% url 'staff_list' %}">Registro de Personal</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="hero">
+            <h1>Bienvenido al Panel Administrativo de Descanso Sereno</h1>
+            <p>Desde aquí puedes gestionar todas las funcionalidades de Descanso Sereno. Utiliza el menú de navegación para acceder a las diferentes secciones del panel de administración.</p>
+        </div>
+    </div>
+    
+    <footer class="encabezado">
+        <div class="info">
+            <p>Contacto: <a href="mailto:contacto@descansosereno.cl">contacto@descansosereno.cl</a> <i class="fa-regular fa-envelope"></i></p>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'logout' %}" class="btn btn-admin">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+            </li>
+        </ul>
+        <div class="copyright">
+            © Descanso Sereno. 2024 Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>

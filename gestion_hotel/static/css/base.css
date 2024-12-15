@@ -1,0 +1,287 @@
+/* General Styles */
+/* Fondo del cuerpo */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(45deg, #b8c6ff, #f5a7b8, #a1c4fd, #c2f7cb);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el gradiente cubra toda la altura de la página */
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inicio {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #0f0f0f;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header and Navigation Bar */
+header {
+    background-color: #0f0f0f;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 15px;
+}
+
+nav .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f5a7b8;
+}
+
+nav ul li a:active {
+    color: white;
+    text-decoration: none;  /* Quita la línea debajo cuando se presiona */
+}
+
+/* Footer */
+.encabezado {
+    background-color: #0f0f0f;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 40px; /* Añadir margen superior para separar del contenido principal */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.encabezado .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado .info a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.encabezado .info a:hover {
+    color: #f5a7b8;
+}
+
+.encabezado ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.encabezado ul li {
+    margin: 0 15px;
+}
+
+.encabezado ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.encabezado ul li a:hover {
+    color: #f5a7b8;
+}
+
+/* Botón de Agregar */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0f0f0f;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1a1a1a;
+}
+
+/* Buttons */
+button {
+    background-color: #0f0f0f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f5a7b8;
+}
+
+/* Formulario */
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form input, form select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form button {
+    align-self: flex-start;
+    background-color: #0f0f0f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #f5a7b8;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: none;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ecf0f1;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Links */
+a {
+    color: #0f0f0f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #f5a7b8;
+}
+
+a:active {
+    color: #0f0f0f;
+    text-decoration: none;  /* Quita la línea debajo cuando se presiona */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    table, th, td {
+        padding: 10px 15px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input, form select, form button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+}

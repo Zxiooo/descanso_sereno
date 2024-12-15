@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(45deg, #b8c6ff, #f5a7b8, #a1c4fd, #c2f7cb);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header and Navigation Bar */
+header {
+    background-color: #0f0f0f;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 15px;
+}
+
+nav .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f5a7b8;
+}
+
+nav ul li a:active {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a .fas {
+    font-size: 20px;
+}
+
+/* Login Section */
+.logeo {
+    background: #0f0f0fea;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logeo h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.logeo form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-group label {
+    margin-right: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logeo form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    flex: 1;
+    color: #333;
+}
+
+.logeo form button {
+    background-color: #ca8f9c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.logeo form button:hover {
+    background-color: #f5a7b8;
+}
+
+/* Error Message */
+.errorlist {
+    color: #ffcc00;
+    margin-bottom: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.errorlist li {
+    margin: 0;
+}
+
+/* Footer */
+.encabezado {
+    background-color: #0f0f0f;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.encabezado .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado .info a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.encabezado .info a:hover {
+    color: #f5a7b8;
+}
+
+.encabezado ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.encabezado ul li {
+    margin: 0 15px;
+}
+
+.encabezado ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.encabezado ul li a:hover {
+    color: #f5a7b8;
+}
+
+.encabezado ul li a .fas {
+    font-size: 24px;
+}
+
+.encabezado .copyright {
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .logeo {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logeo h1 {
+        font-size: 20px;
+    }
+
+    .logeo form input, .logeo form button {
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+    }
+}

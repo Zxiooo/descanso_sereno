@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Descanso Sereno</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo del Hotel">
+                <span>Descanso Sereno</span>
+            </div>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'pago' %}">Reservar Habitación</a></li>
+                <li><a href="{% url 'home' %}">Panel de Admin <i class="fa-solid fa-user-tie"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="logeo">
+        <h1>Inicio de Sesión</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                <label for="id_username"><i class="fas fa-user"></i></label>
+                <input type="text" name="username" id="id_username" placeholder="Ingrese su usuario">
+            </div>
+            <div class="form-group">
+                <label for="id_password"><i class="fas fa-lock"></i></label>
+                <input type="password" name="password" id="id_password" placeholder="Ingrese su contraseña">
+            </div>
+            <button type="submit" class="btn">Ingresar</button>
+        </form>
+    </div>
+    
+    <footer class="encabezado">
+        <div class="info">
+            <p>  Contacto: <a href="mailto:contacto@descansosereno.cl">contacto@descansosereno.cl</a> <i class="fa-regular fa-envelope"></i></p>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'login' %}" class="btn btn-admin">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="copyright">
+            © Descanso Sereno. 2024 Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>

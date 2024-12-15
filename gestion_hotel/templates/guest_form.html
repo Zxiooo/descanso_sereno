@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Registrar Huésped{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Registrar Huésped</h1>
+        <form id="guest-form" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                {{ form.RUN.label_tag }} {{ form.RUN }}
+                <span id="rut-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Nombres.label_tag }} {{ form.Nombres }}
+                <span id="nombres-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Apellidos.label_tag }} {{ form.Apellidos }}
+                <span id="apellidos-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Contacto.label_tag }} {{ form.Contacto }}
+                <span id="email-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.Cantidad_Personas.label_tag }} 
+                {{ form.Cantidad_Personas }}
+                <span id="cantidad-personas-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                {{ form.habitacion.label_tag }} 
+                {{ form.habitacion }}
+                <span id="habitacion-info" class="text-info"></span>
+            </div>
+            <button id="submit-button" type="submit">Guardar <i class="fa-solid fa-floppy-disk"></i></button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/huesped_validador.js' %}"></script>
+{% endblock %}

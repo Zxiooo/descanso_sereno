@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Habitación - Descanso Sereno</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo del Hotel">
+                <span>Descanso Sereno</span>
+            </div>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'pago' %}">Reservar Habitación</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="reservas">
+        <section class="hero">
+            <h1>Reserva tu Habitación en Descanso Sereno</h1>
+            <p>Elige tu habitación ideal y disfruta de una estancia inolvidable.</p>
+            <a href="{% url 'pago' %}" class="btn realizar-reserva">Realizar Reserva <i class="fa-solid fa-bag-shopping"></i></a>
+        </section>
+        
+        <section class="steps">
+            <h2>¿Cómo Realizar tu Reserva?</h2>
+            <div class="step">
+                <h3>1. Ingresa tus Datos 📝</h3>
+                <p>Rellena el formulario con tus datos personales.</p>
+            </div>
+            <div class="step">
+                <h3>2. Selecciona tu Habitación <i class="fa-regular fa-hand-pointer"></i></h3>
+                <p>Tenemos una variedad de habitaciones disponibles para ti.</p>
+            </div>
+            <div class="step">
+                <h3>3. Realiza el Pago 💳</h3>
+                <p>Selecciona tu método de pago preferido.</p>
+            </div>
+            <div class="step">
+                <h3>4. ¡Disfruta tu Estancia! 🥳</h3>
+                <p>Relájate y disfruta de tu estancia con nosotros.</p>
+            </div>
+        </section>
+        
+        <section class="destacados">
+            <h2>Habitaciones Destacadas</h2>
+            <div class="habitaciones">
+                <div class="habitacion card">
+                    <img src="{% static 'images/habitacion1.jpg' %}" alt="Habitación Pequeña">
+                    <h3>Habitación Pequeña</h3>
+                    <p>Ideal para una o dos personas. Precio: ¡$30,000 - $55,000!</p>
+                </div>
+                <div class="habitacion card">
+                    <img src="{% static 'images/habitacion2.jpg' %}" alt="Habitación Mediana">
+                    <h3>Habitación Mediana</h3>
+                    <p>Perfecta para familias pequeñas. Precio: ¡$60,000 - $90,000!</p>
+                </div>
+                <div class="habitacion card">
+                    <img src="{% static 'images/habitacion3.jpg' %}" alt="Habitación Grande">
+                    <h3>Habitación Grande</h3>
+                    <p>Amplia y lujosa para grupos grandes. Precio: ¡$110,000 - $160,000!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonios">
+            <h2>Testimonios de Nuestros Huéspedes</h2>
+            <div class="testimonial">
+                <p>"Una experiencia increíble. Las habitaciones son muy cómodas y el servicio es excepcional."</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>- Ana Pérez</span>
+            </div>
+            <div class="testimonial">
+                <p>"El restaurante ofrece una variedad deliciosa de platos. ¡Definitivamente volveré!"</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span>- Luis Martínez</span>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="encabezado">
+        <div class="info">
+            <p>Contacto: <a href="mailto:contacto@descansosereno.cl">contacto@descansosereno.cl</a> <i class="fa-regular fa-envelope"></i></p>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'login' %}" class="btn btn-admin">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="copyright">
+            © Descanso Sereno. 2024 Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>
